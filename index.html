@@ -6,140 +6,109 @@
   <title>Vyrtuous</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/x-icon" href="/assets/icon.ico" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
 </head>
 <body>
   <!-- Include Navigation Bar -->
   <div id="navbar"></div>
-  <main>
-      <section id="activism" class="doc-section">
-          <h2>Vegan Activism Hub</h2>
-          <div class="intro-screen">
-              <span id="typingText" class="typing"></span>
-          </div>
-          <div class="activism-content">
-              <div class="options">
-                  <a href="https://youtu.be/LQRAfJyEsko?t=6045" class="option">Camels</a>
-                  <a href="cats.html" class="option">Cats</a>
-                  <a href="https://youtu.be/LQRAfJyEsko?t=1399" class="option">Chickens</a>
-                  <a href="https://youtu.be/LQRAfJyEsko?t=3190" class="option">Cows</a>
-                  <a href="https://youtu.be/LQRAfJyEsko?t=5545" class="option">Dogs</a>
-                  <a href="https://youtu.be/LQRAfJyEsko?t=6370" class="option">Dolphins</a>
-                  <a href="deer.html" class="option">Deer</a>
-                  <a href="https://youtu.be/LQRAfJyEsko?t=2735" class="option">Ducks</a>
-                  <a href="https://youtu.be/LQRAfJyEsko?t=4920" class="option">Fish</a>
-                  <a href="https://youtu.be/LQRAfJyEsko?t=260" class="option">Foxes</a>
-                  <a href="https://youtu.be/LQRAfJyEsko?t=4640" class="option">Goats</a>
-                  <a href="https://youtu.be/LQRAfJyEsko?t=5880" class="option">Horses</a>
-                  <a href="https://youtu.be/LQRAfJyEsko?t=6140" class="option">Mice</a>
-                  <a href="https://youtu.be/LQRAfJyEsko?t=5365" class="option">Minks</a>
-                  <a href="https://youtu.be/LQRAfJyEsko?t=260" class="option">Pigs</a>
-                  <a href="https://youtu.be/LQRAfJyEsko?t=5210" class="option">Rabbits</a>
-                  <a href="https://youtu.be/LQRAfJyEsko?t=6370" class="option">Seals</a>
-                  <a href="https://youtu.be/LQRAfJyEsko?t=4270" class="option">Sheep</a>
-                  <a href="https://youtu.be/LQRAfJyEsko?t=2470" class="option">Turkeys</a>
-                  <section id="oauthplugin" class="doc-section">
-              </div>
-          </div>
-      </section>
-      <section id="oauthplugin" class="doc-section">
-          <h2>OAuthPlugin</h2>
-          <p>A Bukkit/Spigot plugin to link Minecraft accounts with Discord & Patreon via OAuth2.</p>
-          <h3>Getting Started</h3>
-          <pre><code class="language-bash">git clone https://github.com/brandongrahamcobb/oauthplugin.git
-    cd oauthplugin
-    mvn clean package
-    </code></pre>
-          <h3>Configuration</h3>
-          <pre><code class="language-yaml"># plugins/OAuthPlugin/config.yml
-    POSTGRES_HOST: "localhost"
-    ENABLE_DISCORD: true
-    DISCORD_CLIENT_ID: "<your-client-id>"
-    DISCORD_REDIRECT_URI: "https://your.domain/oauth/discord_callback"
-    # …etc…
-    </code></pre>
-          <h3>Example Usage (Java API)</h3>
-          <pre><code class="language-java">// in your own Bukkit plugin
-    Database db = Database.completeGetInstance();
-    UserManager um = new UserManager(db);
 
-    CompletableFuture&lt;User&gt; fut = um.getUserByDiscordId(123456789012345678L);
-    fut.thenAccept(user -> {
-      System.out.println("Patreon Tier: " + user.getPatreonTier());
-    });
-    </code></pre>
-      </section>
+  <!-- Intro Screen -->
+  <div class="intro-screen">
+    <span id="typingText" class="typing"></span>
+  </div>
 
-      <section id="projects" class="doc-section">
-          <h2>Other Java Endeavors</h2>
-          <ul class="project-list">
-              <li>
-                  <h3>jVyrtuous – VegBench (Vaadin store)</h3>
-                  <p><a href="https://github.com/brandongrahamcobb/jVyrtuous/tree/VegBench" target="_blank">GitHub →</a></p>
-                  <pre><code class="language-java">// Example Vaadin endpoint
-    @GetMapping("/products")
-    public List&lt;Product&gt; list() {…}
-    </code></pre>
-              </li>
-              <li>
-                  <h3>jVyrtuous – SelfAI</h3>
-                  <p><a href="https://github.com/brandongrahamcobb/jVyrtuous/tree/SelfAI" target="_blank">GitHub →</a></p>
-                  <pre><code class="language-java">// AI inspecting its own codebase
-    AIEngine ai = new AIEngine("src/");
-    ai.analyze();
-    </code></pre>
-              </li>
-              <li>
-                  <h3>jVyrtuous – Lucy (Minecraft QoL)</h3>
-                  <p><a href="https://github.com/brandongrahamcobb/jVyrtuous/tree/Lucy" target="_blank">GitHub →</a></p>
-                  <pre><code class="language-java">// Adds custom crafting recipes
-    RecipeManager.addShapedRecipe(…);
-    </code></pre>
-              </li>
-          </ul>
-      </section>
-  </main>
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="options">
+<!--      <a href="cow.html" class="option">Cows</a>
+      <a href="chicken.html" class="option">Chickens</a>
+      <a href="dog.html" class="option">Dogs</a>
+      <a href="deer.html" class="option">Deer</a>
+      <a href="duck.html" class="option">Ducks</a>
+      <a href="goat.html" class="option">Goats</a>
+      <a href="horse.html" class="option">Horses</a>
+      <a href="pigs.html" class="option">Pigs</a>
+      <a href="sheep.html" class="option">Sheep</a> -->
+      <a href="https://youtu.be/LQRAfJyEsko?t=6045" class="option">Camels</a>
+      <a href="cats.html" class="option">Cats</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=1399" class="option">Chickens</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=3190" class="option">Cows</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=5545" class="option">Dogs</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=6370" class="option">Dolphins</a> 
+      <a href="deer.html" class="option">Deer</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=2735" class="option">Ducks</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=4920" class="option">Fish</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=260" class="option">Foxes</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=4640" class="option">Goats</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=5880" class="option">Horses</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=6140" class="option">Mice</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=5365" class="option">Minks</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=260" class="option">Pigs</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=5210" class="option">Rabbits</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=6370" class="option">Seals</a> 
+      <a href="https://youtu.be/LQRAfJyEsko?t=4270" class="option">Sheep</a> 
+      <a href="https://youtu.be/LQRAfJyEsko?t=2470" class="option">Turkeys</a> 
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2024 Vyrtuous. All rights reserved.</p>
   </footer>
-  <script>
-      fetch('nav.html')
-        .then(r => r.text())
-        .then(html => {
-          document.getElementById('navbar').innerHTML = html;
-          const hamburger = document.getElementById('hamburger');
-          const menu = document.getElementById('navbar-menu');
-          hamburger.addEventListener('click', ()=> menu.classList.toggle('active'));
-        })
-        .catch(console.error);
-  </script>
 
-  <!-- Typing Animation Script (adapted) -->
+  <!-- Scripts -->
   <script>
-      const textArray = [
-        "Veganism is a philosophy and way of living which seeks to exclude – as far as is possible and practicable – all forms of exploitation of, and cruelty to, animals for food, clothing, or any other purpose."
-      ];
-      const randomText = textArray[0];
-      let index = 0;
-      const typingEl = document.getElementById('typingText');
-      const activismContent = document.querySelector('.activism-content');
+    // Load the navigation bar from nav.html
+    fetch('nav.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Failed to load navbar');
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
 
-      function typeWriter() {
-        if (index < randomText.length) {
-          typingEl.textContent += randomText.charAt(index++);
-          setTimeout(typeWriter, 50);
-        } else {
-          // hide the cursor
-          typingEl.classList.remove('typing');
-          // reveal activism links
-          activismContent.classList.add('visible');
-          // scroll into view
-          activismContent.scrollIntoView({ behavior: 'smooth' });
-        }
+        // Set active link in the navigation bar
+        const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+          }
+        });
+
+        // Hamburger Menu Script
+        const hamburger = document.getElementById('hamburger');
+        const navbarMenu = document.getElementById('navbar-menu');
+        hamburger.addEventListener('click', () => {
+          navbarMenu.classList.toggle('active');
+        });
+      })
+      .catch(error => console.error(error));
+
+    // Typing Animation Script
+    const textArray = [
+      "Veganism is a philosophy and way of living which seeks to exclude—as far as is possible and practicable—all forms of exploitation of, and cruelty to, animals for food, clothing, or any other purpose.",
+    ];
+
+    // Pick a random string from the array
+    const randomText = textArray[Math.floor(Math.random() * textArray.length)];
+
+    let index = 0;
+    const typingTextElement = document.getElementById('typingText');
+
+    function typeWriter() {
+      if (index < randomText.length) {
+        typingTextElement.textContent += randomText.charAt(index);
+        index++;
+        setTimeout(typeWriter, 50); // Adjust typing speed here
+      } else {
+        setTimeout(() => {
+          document.querySelector('.main-content').classList.add('visible');
+          window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+        }, 0); // Delay before scrolling to the main content
       }
+    }
 
-      window.addEventListener('load', typeWriter);
+    window.onload = typeWriter;
   </script>
  <script src="/assets/scripts/constellation.js" type="text/javascript"></script>
 </body>
