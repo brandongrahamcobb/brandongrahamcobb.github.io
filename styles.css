@@ -15,7 +15,7 @@ body, html {
 /* General Styles */
 a {
     text-decoration: none;
-    color: inherit;
+    color: inherit
 }
 
 /* Navbar Styles */
@@ -176,3 +176,30 @@ a {
         width: calc(100% - 40px);
     }
 }
+/* Hero */
+.hero {
+  height: 80vh;
+  background: url('/assets/vegan-hero.jpg') center/cover no-repeat;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hero h1 { font-size: 3em; margin-bottom: 0.2em; }
+.hero p  { font-size: 1.2em; margin-bottom: 1em; }
+.btn {
+  background: #1e90ff; padding: 0.8em 1.5em; border-radius: 4px;
+  color: #fff; transition: background 0.3s;
+}
+.btn:hover { background: #0d6efd; }
+
+/* Doc sections */
+.doc-section { padding: 60px 20px; border-bottom: 1px solid #ddd; }
+.doc-section h2 { margin-bottom: 0.5em; }
+.project-list { list-style: none; padding:0; }
+.project-list li { margin-bottom: 2em; }
+
+/* Code blocks */
+pre { background: #2d2d2d; padding: 1em; overflow-x: auto; border-radius: 4px; }
