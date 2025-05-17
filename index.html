@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vyrtuous</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="/assets/icon.ico" />
+</head>
+<body>
+  <!-- Include Navigation Bar -->
+  <div id="navbar"></div>
+
+  <!-- Intro Screen -->
+  <div class="intro-screen">
+    <span id="typingText" class="typing"></span>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="options">
+<!--      <a href="cow.html" class="option">Cows</a>
+      <a href="chicken.html" class="option">Chickens</a>
+      <a href="dog.html" class="option">Dogs</a>
+      <a href="deer.html" class="option">Deer</a>
+      <a href="duck.html" class="option">Ducks</a>
+      <a href="goat.html" class="option">Goats</a>
+      <a href="horse.html" class="option">Horses</a>
+      <a href="pigs.html" class="option">Pigs</a>
+      <a href="sheep.html" class="option">Sheep</a> -->
+      <a href="https://youtu.be/LQRAfJyEsko?t=6045" class="option">Camels</a>
+      <a href="cats.html" class="option">Cats</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=1399" class="option">Chickens</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=3190" class="option">Cows</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=5545" class="option">Dogs</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=6370" class="option">Dolphins</a> 
+      <a href="deer.html" class="option">Deer</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=2735" class="option">Ducks</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=4920" class="option">Fish</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=260" class="option">Foxes</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=4640" class="option">Goats</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=5880" class="option">Horses</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=6140" class="option">Mice</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=5365" class="option">Minks</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=260" class="option">Pigs</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=5210" class="option">Rabbits</a>
+      <a href="https://youtu.be/LQRAfJyEsko?t=6370" class="option">Seals</a> 
+      <a href="https://youtu.be/LQRAfJyEsko?t=4270" class="option">Sheep</a> 
+      <a href="https://youtu.be/LQRAfJyEsko?t=2470" class="option">Turkeys</a> 
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Vyrtuous. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Load the navigation bar from nav.html
+    fetch('nav.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Failed to load navbar');
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+
+        // Set active link in the navigation bar
+        const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+          }
+        });
+
+        // Hamburger Menu Script
+        const hamburger = document.getElementById('hamburger');
+        const navbarMenu = document.getElementById('navbar-menu');
+        hamburger.addEventListener('click', () => {
+          navbarMenu.classList.toggle('active');
+        });
+      })
+      .catch(error => console.error(error));
+
+    // Typing Animation Script
+    const textArray = [
+      "Veganism is a philosophy and way of living which seeks to exclude—as far as is possible and practicable—all forms of exploitation of, and cruelty to, animals for food, clothing, or any other purpose.",
+    ];
+
+    // Pick a random string from the array
+    const randomText = textArray[Math.floor(Math.random() * textArray.length)];
+
+    let index = 0;
+    const typingTextElement = document.getElementById('typingText');
+
+    function typeWriter() {
+      if (index < randomText.length) {
+        typingTextElement.textContent += randomText.charAt(index);
+        index++;
+        setTimeout(typeWriter, 50); // Adjust typing speed here
+      } else {
+        setTimeout(() => {
+          document.querySelector('.main-content').classList.add('visible');
+          window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+        }, 0); // Delay before scrolling to the main content
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+ <script src="/assets/scripts/constellation.js" type="text/javascript"></script>
+</body>
+</html>
